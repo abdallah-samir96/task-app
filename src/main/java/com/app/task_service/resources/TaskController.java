@@ -1,10 +1,8 @@
 package com.app.task_service.resources;
 
+import com.app.task_service.model.dtos.TaskRequestDTO;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,7 +20,13 @@ public class TaskController {
     }
 
     @PostMapping
-    public void add(String task){
+    public void add(@RequestBody TaskRequestDTO task){
         System.out.printf("Task %s has been added", task);
     }
+
+    @DeleteMapping
+    public void delete(@RequestParam String name) {
+        System.out.printf("trying to delete task %s", name);
+    }
+
 }
