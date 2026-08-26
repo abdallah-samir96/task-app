@@ -21,6 +21,10 @@ FROM eclipse-temurin:17-jre
 
 WORKDIR /app
 
+ENV APP_CONF_URL=tcp://postgresql:5432/task_db
+# the password will be loaded from Vault
+#ENV APP_CONF_USERNAME=admin
+ENV APP_CONF_PASSWORD=admin
 # Copy the generated JAR from the build stage
 COPY --from=build /app/target/*.jar task-service.jar
 
