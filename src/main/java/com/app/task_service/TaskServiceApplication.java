@@ -10,7 +10,7 @@ public class TaskServiceApplication {
 		SpringApplication.run(TaskServiceApplication.class, args);
 		var envs = System.getenv();
 		// printing all env variables provided inside the container
-		envs.forEach((key, value) -> System.out.printf("%s = %s %n", key, value));
+		envs.forEach((key, value) -> System.out.printf("%s = %s %n ", key, value));
 
 
 	}
